@@ -134,17 +134,6 @@ def update_entry(entry_name):
         print("\n Enter input only from given options in proper case: i)entry_name  ii) description iii)version ")
 
 
-#def update_entry_name(documents):
- #   new_entry_name = click.prompt('\tPlease enter new entry name', type=str)
-  #  if documents['n'] == 0:
-   #         print("Entry" + new_entry_name + " does not exist. Enter a valid name")
-    #        update_entry(documents)
-    #else:
-     #       print(collection.update_one(new_entry_name))
-
-
-
-
 # Remove the entry called "entry_name"
 def remove_entry(entry_name):
     write_result = collection.remove({"name" : entry_name})
@@ -157,7 +146,7 @@ def remove_entry(entry_name):
 def get_entry_name_list():
     documents = collection.find()
     list_of_entries = list(documents)
-    print (list_of_entries)
+    print(list_of_entries)
     list_of_entry_names = list()
     for entry in list_of_entries:
         entry_name = entry['name']
